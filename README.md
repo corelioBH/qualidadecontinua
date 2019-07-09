@@ -1,4 +1,4 @@
-# qualidadecontinua
+# Qualidade Contínua
 
 Esse repositório contém exemplos práticos de uso de práticas de qualidade contínua, tais como:
 - Uso de ferramentas de análise de código como o SonarQube
