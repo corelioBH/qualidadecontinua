@@ -37,17 +37,9 @@ Vamos executar o compose para subir a imagem Sonarqube:
 docker run -d --name sonarqube -p 9000:9000 sonarqube
 ```
 
-Acompanhe os passos abaixo, que mostram o arquivo sendo processado e montando uma topologia com o Docker e PostgreSQL no seu ambiente.
-
-![img](https://cdn-images-1.medium.com/max/1600/1*yT19LpS3xhT_KuoMjON1nQ.png)
 
 
-
-![img](https://cdn-images-1.medium.com/max/1600/1*YVH7eDgYh3UCA02WdLer5Q.png)
-
-
-
-Abra o seu navegador no endereço [http://localhost:9000](http://localhost:9000/)
+Depois de alguns segundos, abra o seu navegador no endereço [http://localhost:9000](http://localhost:9000/)
 
 
 
@@ -57,7 +49,7 @@ Enter the default credentials from the docker image
 
 > **Login**: admin
 
-> **Password**: bitnami
+> **Password**: admin
 
 Será exibida uma interface para inserir informações sobre o projeto:
 
