@@ -31,43 +31,10 @@ Em nível de um sistema, ele permite também que você olhe cada mau cheito no s
 
 Vamos agora criar um ambiente e configurar o SonarQube com Docker + SonarQube  + Projeto .NET Core.
 
-Crie um novo diretório no seu sistem e salve o código abaixo com o nome docker-compose.yml.
-
-```yaml
-version: '2'
-services:
-  postgresql:
-    image: 'bitnami/postgresql:10'
-    ports:
-      - '5432:5432'
-    volumes:
-      - 'postgresql_data:/bitnami'
-  sonarqube:
-    image: bitnami/sonarqube:latest
-    ports:
-      - '9000:9000'
-    environment:
-      - POSTGRESQL_HOST=postgresql
-      - POSTGRESQL_ROOT_USER=postgres
-      - POSTGRESQL_CLIENT_CREATE_DATABASE_NAME=bitnami_sonarqube
-      - POSTGRESQL_CLIENT_CREATE_DATABASE_USERNAME=bn_sonarqube
-      - POSTGRESQL_CLIENT_CREATE_DATABASE_PASSWORD=bitnami1234
-      - SONARQUBE_DATABASE_NAME=bitnami_sonarqube
-      - SONARQUBE_DATABASE_USER=bn_sonarqube
-      - SONARQUBE_DATABASE_PASSWORD=bitnami1234
-    volumes:
-      - sonarqube_data:/bitnami
-volumes:
-  sonarqube_data:
-    driver: local
-  postgresql_data:
-    driver: local
-```
-
-Em seguida vamos executar o compose para subir a imagem:
+Vamos executar o compose para subir a imagem Sonarqube:
 
 ```
-docker-compose up
+docker run -d --name sonarqube -p 9000:9000 sonarqube
 ```
 
 Acompanhe os passos abaixo, que mostram o arquivo sendo processado e montando uma topologia com o Docker e PostgreSQL no seu ambiente.
