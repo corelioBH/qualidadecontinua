@@ -6,3 +6,6 @@ Esse repositório contém exemplos práticos de uso de práticas de qualidade co
 - Uso de testes de unidade automatizados e criação de pipelines automatizados de verificação de builds
 
 Os exemplos foram descritos para tecnologias .NET Core/C#.
+
+O nosso primeiro tutorial irá ensiná-lo como usar ferramenta de análise de código. Iremos explorar o uso da ferramenta SonarQube, que suporta múltiplas linguages. Você pode acessar o tutorial [aqui](https://github.com/corelioBH/qualidadecontinua/blob/master/sonarqube.md).
+

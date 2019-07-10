@@ -29,9 +29,7 @@ Em nível de um sistema, ele permite também que você olhe cada mau cheito no s
 
 ------
 
-Vamos agora criar um ambiente e configurar o SonarQube com Docker + SonarQube (7.5) + Projeto .NET Core.
-
-É necessário ter o Java SDK instalado
+Vamos agora criar um ambiente e configurar o SonarQube com Docker + SonarQube  + Projeto .NET Core.
 
 Crie um novo diretório no seu sistem e salve o código abaixo com o nome docker-compose.yml.
 
@@ -41,33 +39,30 @@ services:
   postgresql:
     image: 'bitnami/postgresql:10'
     ports:
-
-- '5432:5432'
-  lumes:
-- 'postgresql_data:/bitnami'
+      - '5432:5432'
+    volumes:
+      - 'postgresql_data:/bitnami'
   sonarqube:
-      image: bitnami/sonarqube:latest
-      ports:
-- '9000:9000'
-  vironment:
-- POSTGRESQL_HOST=postgresql
-- POSTGRESQL_ROOT_USER=postgres
-- POSTGRESQL_CLIENT_CREATE_DATABASE_NAME=bitnami_sonarqube
-- POSTGRESQL_CLIENT_CREATE_DATABASE_USERNAME=bn_sonarqube
-- POSTGRESQL_CLIENT_CREATE_DATABASE_PASSWORD=bitnami1234
-- SONARQUBE_DATABASE_NAME=bitnami_sonarqube
-- SONARQUBE_DATABASE_USER=bn_sonarqube
-- SONARQUBE_DATABASE_PASSWORD=bitnami1234
-  lumes:
-- sonarqube_data:/bitnami
-  volumes:
-    sonarqube_data:
-      driver: local
-    postgresql_data:
-      driver: local
+    image: bitnami/sonarqube:latest
+    ports:
+      - '9000:9000'
+    environment:
+      - POSTGRESQL_HOST=postgresql
+      - POSTGRESQL_ROOT_USER=postgres
+      - POSTGRESQL_CLIENT_CREATE_DATABASE_NAME=bitnami_sonarqube
+      - POSTGRESQL_CLIENT_CREATE_DATABASE_USERNAME=bn_sonarqube
+      - POSTGRESQL_CLIENT_CREATE_DATABASE_PASSWORD=bitnami1234
+      - SONARQUBE_DATABASE_NAME=bitnami_sonarqube
+      - SONARQUBE_DATABASE_USER=bn_sonarqube
+      - SONARQUBE_DATABASE_PASSWORD=bitnami1234
+    volumes:
+      - sonarqube_data:/bitnami
+volumes:
+  sonarqube_data:
+    driver: local
+  postgresql_data:
+    driver: local
 ```
-
-
 
 Em seguida vamos executar o compose para subir a imagem:
 
@@ -149,8 +144,6 @@ O Login pode ser substituído pela Key gerada acima, ficando apenas:
 dotnet sonarscanner begin /d:sonar.login=keygerada /k:”AwesomeKey”
 ```
 
-
-
 ![img](https://cdn-images-1.medium.com/max/1600/1*OXUhCU_AbDVHWL2wjN0G6Q.png)
 
 Agora vamos executar um build do projeto:
@@ -158,8 +151,6 @@ Agora vamos executar um build do projeto:
 ```
 dotnet build
 ```
-
-
 
 ![img](https://cdn-images-1.medium.com/max/1600/1*l7MZN68KmVLTBssmTxpKjw.png)
 
