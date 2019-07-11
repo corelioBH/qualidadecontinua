@@ -4,13 +4,13 @@ Iremos explorar nesse laboratório o conceito de revisões por pares com o conce
 
 O Git Pull Request é um poderoso mecanismo de comunicação técnica para permitir que times possam estabelecer revisões por pares e criar gestão do conhecimento sobre o código de um produto. Ele permite que você automatize o processo de críticas e feedbacks sobre commits e também permite estabeler processos ágeis de governança.
 
-![https://img.mandic.com.br/blog/2017/07/bitbucket411-blog-1200x-branches2.png]()
+![https://img.mandic.com.br/blog/2017/07/bitbucket411-blog-1200x-branches2.png](https://img.mandic.com.br/blog/2017/07/bitbucket411-blog-1200x-branches2.png)
 
 Para conhecermos esse mecanismo siga os passos abaixo.
 
 ### Introdução ao GitHub com o VS Code
 
-Realize o seguinte tutorial para se ambientar com as operações básicas sobre o Git a partir do ambiente do VS Code.
+Realize o seguinte tutorial para se ambientar com as operações básicas sobre o Git e branches a partir do ambiente do VS Code.
 
 https://www.azuredevopslabs.com/labs/azuredevops/github/
 
